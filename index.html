@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zakir | Kiçik bizneslər üçün sayt hazırlayıram</title>
+<meta name="description" content="Kiçik bizneslər üçün 7 günə hazır, telefonda gözəl görünən və müştəri gətirən sayt hazırlayıram.">
+<meta property="og:title" content="Zakir | Kiçik bizneslər üçün sayt hazırlayıram">
+<meta property="og:description" content="7 günə hazır, telefonda gözəl görünən və müştəri gətirən sayt.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7FA; --surface:#FFFFFF; --text:#0B1F3A; --muted:#4F5E78; --line:#D9E0EA;
+  --accent:#0F8B8D; --accent-ink:#0A6466; --soft:#DDF1F0;
+  --btn:#0B1F3A; --btn-text:#FFFFFF; --block:#0B1F3A; --block-text:#FFFFFF; --block-muted:#B4C2D8;
+  --head:"Sora","Segoe UI",system-ui,sans-serif; --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#08121F; --surface:#0F1D31; --text:#EAF0F8; --muted:#9AA9C0; --line:#1E2E47;
+    --accent:#3CC4C6; --accent-ink:#5BD6D8; --soft:#12303A;
+    --btn:#EAF0F8; --btn-text:#08121F; --block:#0F1D31; --block-text:#EAF0F8; --block-muted:#9AA9C0; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#08121F; --surface:#0F1D31; --text:#EAF0F8; --muted:#9AA9C0; --line:#1E2E47;
+  --accent:#3CC4C6; --accent-ink:#5BD6D8; --soft:#12303A;
+  --btn:#EAF0F8; --btn-text:#08121F; --block:#0F1D31; --block-text:#EAF0F8; --block-muted:#9AA9C0; color-scheme:dark;
+}
+html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--text); font-family:var(--body); font-size:1.08rem; line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:4px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.wrap{max-width:1040px; margin:0 auto; padding:0 22px}
+h1,h2,h3{font-family:var(--head); letter-spacing:-.02em; line-height:1.15; margin:0}
+
+.top{display:flex; justify-content:space-between; align-items:center; padding:22px 0}
+.logo{font-family:var(--head); font-weight:700; font-size:1.2rem; text-decoration:none}
+.top nav{display:flex; align-items:center; gap:22px}
+.top nav a{text-decoration:none; color:var(--muted); font-size:.98rem}
+.top nav a:hover{color:var(--text)}
+.btn{display:inline-block; background:var(--btn); color:var(--btn-text); padding:14px 24px; border-radius:8px;
+  text-decoration:none; font-weight:600; font-size:1rem; border:1px solid var(--btn); transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent; color:inherit; border-color:currentColor}
+.btn.sm{padding:9px 16px; font-size:.95rem}
+.top nav .btn{color:var(--btn-text)}
+
+.hero{display:grid; grid-template-columns:1.25fr .75fr; gap:48px; align-items:center; padding:48px 0 72px}
+.hero h1{font-size:clamp(2rem,4.6vw,3.1rem); margin-bottom:20px; max-width:15em}
+.hero p{color:var(--muted); font-size:1.15rem; max-width:34em; margin:0 0 28px}
+.hero .actions{display:flex; flex-wrap:wrap; gap:12px}
+
+.phone{justify-self:center; width:250px; background:#0B1F3A; border-radius:36px; padding:10px;
+  box-shadow:0 24px 50px -22px rgba(11,31,58,.55)}
+.screen{background:#fff; border-radius:28px; overflow:hidden; color:#0B1F3A; min-height:420px; font-size:.82rem}
+.s-bar{display:flex; justify-content:space-between; align-items:center; padding:14px 14px 10px; font-weight:600}
+.s-bar i{width:18px; height:2px; background:#0B1F3A; box-shadow:0 5px #0B1F3A,0 -5px #0B1F3A}
+.s-hero{margin:0 12px; border-radius:16px; padding:22px 16px; color:#fff;
+  background:linear-gradient(135deg,#0F8B8D,#0B1F3A)}
+.s-hero b{display:block; font-family:var(--head); font-size:1.15rem; line-height:1.2; margin-bottom:12px}
+.s-hero span{display:inline-block; background:#fff; color:#0B1F3A; padding:7px 12px; border-radius:6px; font-weight:600}
+.s-list{padding:14px 14px 4px}
+.s-list div{display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid #E4E9F0}
+.s-call{margin:14px 12px; text-align:center; background:#0B1F3A; color:#fff; padding:11px; border-radius:8px; font-weight:600}
+.caption{text-align:center; color:var(--muted); font-size:.85rem; margin-top:14px}
+
+section{padding:56px 0; border-top:1px solid var(--line)}
+.two{display:grid; grid-template-columns:.8fr 1.2fr; gap:48px}
+h2{font-size:clamp(1.5rem,3vw,2rem)}
+.lead2{color:var(--muted); margin:10px 0 0}
+.rows{margin:0; padding:0}
+.rows div{padding:18px 0; border-bottom:1px solid var(--line)}
+.rows div:first-child{padding-top:0}
+.rows dt{font-family:var(--head); font-weight:600; font-size:1.1rem; margin-bottom:4px}
+.rows dd{margin:0; color:var(--muted)}
+.who{font-size:1.25rem; line-height:1.7; margin:0; max-width:30em}
+
+.days{list-style:none; margin:0; padding:0 0 0 22px; border-left:2px solid var(--accent)}
+.days li{position:relative; padding:0 0 26px 18px}
+.days li:last-child{padding-bottom:0}
+.days li::before{content:""; position:absolute; left:-30px; top:7px; width:12px; height:12px; border-radius:50%;
+  background:var(--bg); border:3px solid var(--accent)}
+.days b{display:block; font-family:var(--head); font-size:1.05rem; margin-bottom:2px}
+.days span{color:var(--muted)}
+
+.contact{background:var(--block); color:var(--block-text); border-radius:20px; padding:48px 40px; margin:8px 0 56px}
+.contact h2{font-size:clamp(1.6rem,3.4vw,2.3rem); max-width:16em}
+.contact p{color:var(--block-muted); max-width:34em; margin:14px 0 24px}
+.contact .btn{background:var(--block-text); color:var(--block); border-color:var(--block-text)}
+.contact .btn.alt{background:transparent; color:var(--block-text); border-color:var(--block-text)}
+#links{display:flex; flex-wrap:wrap; gap:12px}
+.hint{margin-top:22px; font-size:.95rem; color:var(--block-muted)}
+
+.faq details{border-bottom:1px solid var(--line); padding:16px 0}
+.faq details:first-child{padding-top:0}
+.faq summary{cursor:pointer; font-family:var(--head); font-weight:600; font-size:1.05rem; list-style:none; display:flex; justify-content:space-between; gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+"; color:var(--accent-ink); font-size:1.4rem; line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:10px 0 0; color:var(--muted)}
+footer{padding:0 0 40px; color:var(--muted); font-size:.92rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr; gap:36px; padding-top:28px}
+  .two{grid-template-columns:1fr; gap:24px}
+  .top nav a:not(.btn){display:none}
+  .contact{padding:34px 24px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="#">Zakir</a>
+    <nav><a href="#nece">Necə işləyirəm</a><a class="btn sm" href="#elaqe">Əlaqə</a></nav>
+  </div>
+
+  <header class="hero">
+    <div>
+      <h1>Kiçik bizneslər üçün 7 günə hazır, telefonda gözəl görünən və müştəri gətirən sayt hazırlayıram.</h1>
+      <p>Kafe, mağaza, klinika və xidmət biznesləri üçün sürətli, aydın və mobil uyğun sayt. Qiymət işə başlamazdan əvvəl razılaşdırılır.</p>
+      <div class="actions"><a class="btn" href="#elaqe">Sayt sifariş et</a><a class="btn alt" href="#nece">Prosesə bax</a></div>
+    </div>
+    <div>
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="s-bar"><span>Kafe Nümunə</span><i></i></div>
+          <div class="s-hero"><b>Səhər kofesi, 8:00-dan</b><span>Sifariş et</span></div>
+          <div class="s-list"><div><span>Latte</span><b>4 ₼</b></div><div><span>Çay dəsti</span><b>6 ₼</b></div><div><span>Çiyələkli desert</span><b>7 ₼</b></div></div>
+          <div class="s-call">Zəng et</div>
+        </div>
+      </div>
+      <p class="caption">Nümunə dizayn: telefonda belə görünəcək</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="two">
+      <div><h2>Kimlər üçün</h2></div>
+      <p class="who">Kafe və restoranlar, mağazalar, klinikalar, gözəllik salonları, kurslar və xidmət göstərən kiçik bizneslər. Müştəriləriniz sizi telefonda axtarırsa, sayt onları sizə çatdırmalıdır.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="two">
+      <div><h2>Saytınız nə edəcək</h2><p class="lead2">Gözəl görünmək kifayət deyil, sayt müştərinin sizinlə əlaqə saxlamasına kömək etməlidir.</p></div>
+      <dl class="rows">
+        <div><dt>Telefonda rahat açılır</dt><dd>Müştərilərin çoxu telefondan baxır. Sayt hər ekranda səliqəli görünür.</dd></div>
+        <div><dt>Sürətli yüklənir</dt><dd>Yavaş sayt müştərini itirir. Sadə və yüngül quruluş seçirəm.</dd></div>
+        <div><dt>Bir toxunuşla əlaqə</dt><dd>Zəng, mesaj və ünvan düymələri aydın yerdədir.</dd></div>
+        <div><dt>Qiymət əvvəlcədən məlumdur</dt><dd>İşə başlamazdan əvvəl razılaşırıq, gizli əlavə xərc olmur.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="nece">
+    <div class="two">
+      <div><h2>7 günlük proses</h2><p class="lead2">Hər mərhələdə nə baş verdiyini bilirsiniz.</p></div>
+      <ol class="days">
+        <li><b>1-2-ci gün: söhbət və plan</b><span>Biznesiniz, müştəriləriniz və saytdan nə gözlədiyiniz barədə danışırıq. Qiymət və məzmun razılaşdırılır.</span></li>
+        <li><b>3-5-ci gün: hazırlıq</b><span>Sayt hazırlanır. Mətn, şəkil və əlaqə düymələri yerləşdirilir.</span></li>
+        <li><b>6-cı gün: yoxlama</b><span>Siz saytı telefonda və kompüterdə yoxlayırsınız, düzəlişləri birlikdə edirik.</span></li>
+        <li><b>7-ci gün: təhvil</b><span>Sayt işə düşür və sizə təhvil verilir.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="two">
+      <div><h2>Mənim haqqımda</h2></div>
+      <p class="who">Mən Zakir, Xankəndidəyəm. Kiçik bizneslər üçün sadə, aydın və müştəri gətirən saytlar hazırlayıram. İşə başlamazdan əvvəl nə istədiyinizi dəqiq razılaşırıq, sonra isə razılaşdığımız müddətdə təhvil verirəm.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="two">
+      <div><h2>Tez-tez verilən suallar</h2></div>
+      <div class="faq">
+        <details><summary>Saytın qiyməti nə qədərdir?</summary><p>Qiymət biznesinizin ehtiyacına görə dəyişir. Söhbətdən sonra dəqiq qiyməti yazılı razılaşırıq və işə başlayandan sonra artırmırıq.</p></details>
+        <details><summary>7 gün həqiqətən kifayət edir?</summary><p>Mətn və şəkilləri vaxtında göndərsəniz, bəli. Gecikmə olarsa, yeni müddəti birlikdə razılaşırıq.</p></details>
+        <details><summary>Məndən nə lazımdır?</summary><p>Biznesinizin adı, xidmətlər və qiymətlər, əlaqə məlumatları, varsa loqo və şəkillər.</p></details>
+        <details><summary>Düzəliş edə bilərəm?</summary><p>Bəli. Yoxlama mərhələsində istədiyiniz düzəlişləri birlikdə edirik.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="elaqe" style="border-top:0;padding-top:0">
+    <div class="contact">
+      <h2>Saytınızı 7 günə başlayaq</h2>
+      <p id="cmsg">Yazarkən biznesinizin adını, nə satdığınızı və bəyəndiyiniz bir sayt nümunəsini qeyd edin.</p>
+      <div id="links"></div>
+    </div>
+  </section>
+
+  <footer>© <span id="yr"></span> Zakir. Xankəndi, Azərbaycan.</footer>
+</div>
+
+<script>
+// Əlaqə məlumatlarını bura yazın. Boş qalarsa, düymələr göstərilmir.
+var CONTACT = { email: "", whatsapp: "994505658573", phone: "", instagram: "zeeqo.q", tiktok: "elish.260" }; // whatsapp və phone: yalnız rəqəmlər, ölkə kodu ilə
+document.getElementById("yr").textContent = new Date().getFullYear();
+(function(){
+  var box = document.getElementById("links"), n = 0;
+  function add(href, text, alt, ext){
+    var a = document.createElement("a");
+    a.href = href; a.textContent = text; a.className = "btn" + (alt ? " alt" : "");
+    if (ext){ a.target = "_blank"; a.rel = "noopener"; }
+    box.appendChild(a); n++;
+  }
+  if (CONTACT.whatsapp) add("https://wa.me/" + CONTACT.whatsapp, "WhatsApp-da yaz", false, true);
+  if (CONTACT.instagram) add("https://www.instagram.com/" + CONTACT.instagram, "Instagram", true, true);
+  if (CONTACT.tiktok) add("https://www.tiktok.com/@" + CONTACT.tiktok, "TikTok", true, true);
+  if (CONTACT.phone) add("tel:+" + CONTACT.phone, "Zəng et", true, false);
+  if (CONTACT.email) add("mailto:" + CONTACT.email, "Email göndər", true, false);
+  if (!n) document.getElementById("cmsg").textContent = "Əlaqə üçün LinkedIn-də mənə mesaj yazın. Biznesinizin adını və nə satdığınızı qeyd edin.";
+})();
+</script>
+</body>
+</html>
